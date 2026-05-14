@@ -204,7 +204,7 @@ public class FitsOperationsTest extends MinocTest {
         final String testFilePrefix = "test-simple";
         final String testFileExtension = "fits";
         final URI artifactURI = URI.create("cadc:TEST/" + testFilePrefix + "." + testFileExtension);
-        final String[] cutoutSpecs = new String[] {
+        final String[] cutoutSpecs = new String[]{
                 "[0][200:350,100:300]"
         };
 
@@ -226,7 +226,7 @@ public class FitsOperationsTest extends MinocTest {
         } finally {
             putContentType = "application/fits";
         }
-        
+
         Subject.doAs(userSubject, (PrivilegedExceptionAction<Object>) () -> {
             HttpGet head = new HttpGet(artifactURL, false);
             head.setHeadOnly(true);
