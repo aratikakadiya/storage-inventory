@@ -221,7 +221,7 @@ public class GetAction extends ArtifactAction {
             String ifModifiedSince = syncInput.getHeader("If-Modified-Since");
             if (ifModifiedSince != null && artifact.getContentLastModified() != null) {
                 try {
-                    DateFormat df = DateUtil.getDateFormat(DateUtil.HTTP_DATE_FORMAT, DateUtil.UTC);
+                    DateFormat df = DateUtil.getDateFormat(DateUtil.HTTP_DATE_FORMAT, DateUtil.GMT);
                     Date clientDate = df.parse(ifModifiedSince);
                     if (!artifact.getContentLastModified().after(clientDate)) {
                         syncOutput.setCode(304);
