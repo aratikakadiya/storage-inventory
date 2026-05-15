@@ -123,7 +123,7 @@ public class GetActionTest extends MinocTest {
 
                     // 304 Not Modified
                     get = new HttpGet(artifactURL, out);
-                    DateFormat df = DateUtil.getDateFormat(DateUtil.HTTP_DATE_FORMAT, DateUtil.UTC);
+                    DateFormat df = DateUtil.getDateFormat(DateUtil.HTTP_DATE_FORMAT, DateUtil.GMT);
                     String httpDate = df.format(new Date());
 
                     get.setRequestProperty("If-Modified-Since", httpDate);
